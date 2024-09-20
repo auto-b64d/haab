@@ -18,7 +18,7 @@ observe(document.documentElement, {}, muts => {
 			const elem = n as Element
 			if (
 				elem instanceof HTMLScriptElement && (
-					elem.async // unsafe / 현재 async 속성이 적용된 script는 광고 관련밖에 없음
+					(elem.async && !elem.src.includes('hitomi.la')) // unsafe / 현재 async 속성이 적용된 script는 광고 관련밖에 없음
 						|| /\bcreateElement\((['"])script\1\)/.test(elem.innerText)
 				)
 			) {
