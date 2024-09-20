@@ -17,8 +17,10 @@ observe(document.documentElement, {}, muts => {
 		for (const n of mut.addedNodes) {
 			const elem = n as Element
 			if (
-				elem instanceof HTMLScriptElement
-					&& elem.async // unsafe / 현재 async 속성이 적용된 script는 광고 관련밖에 없음
+				elem instanceof HTMLScriptElement && (
+					elem.async // unsafe / 현재 async 속성이 적용된 script는 광고 관련밖에 없음
+						|| /\bcreateElement\((['"])script\1\)/.test(elem.innerText)
+				)
 			) {
 				// 광고 스크립트
 				console.log(['DEBUG'], 'removing', elem)

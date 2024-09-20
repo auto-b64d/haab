@@ -5,7 +5,8 @@
 		"action": { "type": "block" },
 		"condition": {
 			"domainType": "thirdParty",
-			"regexFilter": "\\bad[^a-z].*\\.js$|\\/\\d+\\/code\\.js$"
+			"regexFilter": "\\bad[^a-z].*\\.js$|\\/\\d+\\/code\\.js$",
+			"isUrlFilterCaseSensitive": true
 		}
 	}
 ]
