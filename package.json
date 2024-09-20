@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"gen-zip-win": "gen-zip-win.ps1"
+	},
+	"devDependencies": {
+		"@types/chrome": "latest",
+		"typescript": "latest"
+	}
+}

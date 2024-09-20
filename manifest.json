@@ -1,0 +1,22 @@
+{
+	"manifest_version": 3,
+	"name": "haab",
+	"version": "1.0",
+	"permissions": ["declarativeNetRequest"],
+	"host_permissions": ["https://hitomi.la/*"],
+	"content_scripts": [
+		{
+			"matches": ["https://hitomi.la/*"],
+			"js": ["dist/content.js"],
+			"run_at": "document_start",
+			"world": "MAIN"
+		}
+	],
+	"declarative_net_request": {
+		"rule_resources": [{
+			"id": "block_rules",
+			"enabled": true,
+			"path": "block_rules.json"
+		}]
+	}
+}
