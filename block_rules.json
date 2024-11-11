@@ -6,6 +6,7 @@
 		"condition": {
 			"domainType": "thirdParty",
 			"regexFilter": "\\bad[^a-z].*\\.js$|\\/\\d+\\/code\\.js$|\\/[0-9a-f]*[0-9][0-9a-f]*\\.js$",
+			"initiatorDomains": ["*://hitomi.la"],
 			"isUrlFilterCaseSensitive": true
 		}
 	}

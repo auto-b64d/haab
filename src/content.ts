@@ -55,7 +55,7 @@ const hasClass = (class_: string) =>
 	(elem: Element) =>
 		elem.classList.contains(class_)
 
-// head, body도 초기에는 존재하지 않을 수 있음
+// head, body도 초기에는 존재하지 않음
 observeUntilFound(
 	document.documentElement,
 	elem => elem instanceof HTMLHeadElement,
