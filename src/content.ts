@@ -73,6 +73,7 @@ observeUntilFound(
 			hasClass('container'),
 			container => {
 				observe(container, work)
+				observeUntilFound(container, hasClass('content'), elem => observe(elem, work))
 				observeUntilFound(container, hasClass('top-content'), elem => observe(elem, work))
 			},
 		)
